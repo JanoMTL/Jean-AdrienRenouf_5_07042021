@@ -34,9 +34,9 @@ function displayArticles(article){
    cloneElement.getElementById("camera__title").textContent = article.name
    cloneElement.getElementById("camera__img").src = article.imageUrl
    cloneElement.getElementById("camera__price").textContent = 'À partir de ' + article.price/100 + ' €'
-   cloneElement.getElementById('card').setAttribute("href", "/product.html")
+   cloneElement.getElementById("card").setAttribute("href", "product.html?id=" + article._id)
+   
    document.getElementById('main').appendChild(cloneElement)
    
 }
-
 
