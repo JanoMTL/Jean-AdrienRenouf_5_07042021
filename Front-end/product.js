@@ -85,7 +85,7 @@ const id = params.get('id')
         const cameraType = document.getElementById('camera__title').textContent
         const cameraPrice = document.getElementById('camera__price').textContent
         const cameraLens = document.getElementById('lens_select')[selector.selectedIndex].id
-        const cameraQuantity = document.getElementById('Quantity').id
+        const cameraQuantity = document.getElementById('Quantity')[selector1.selectedIndex].id
         const order = { cameraType, cameraPrice, cameraLens, cameraQuantity}
 
         
