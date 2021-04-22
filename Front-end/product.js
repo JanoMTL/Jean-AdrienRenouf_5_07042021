@@ -4,6 +4,8 @@
 let params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 
+
+
 /**Récupération des données sur L'API */
 
  main ()
@@ -86,7 +88,15 @@ const id = params.get('id')
         const cameraPrice = document.getElementById('camera__price').textContent
         const cameraLens = document.getElementById('lens_select')[selector.selectedIndex].id
         const cameraQuantity = document.getElementById('Quantity')[selector1.selectedIndex].id
-        const order = { cameraType, cameraPrice, cameraLens, cameraQuantity}
+        const order = {
+            Type:cameraType, 
+            Price:cameraPrice, 
+            Lens:cameraLens, 
+            Quantity:cameraQuantity}
+           
+            
+           
+
 
         
     /** Vérifier si le panier contient des données et les convertir en objet JS (via JSON.Parse) */

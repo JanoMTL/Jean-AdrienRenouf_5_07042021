@@ -4,14 +4,11 @@
 let ProduitsEnregistrésDansLocalStorage = JSON.parse(localStorage.getItem("products"))
 
 
-
-
-
 /**--------------Affichage des éléments du panier dans un tableau----------------- */
 
 /** Sélectionner la classe pour injecter les données */
 
-const Contener = document.getElementById("main_cart");
+const Contener = document.getElementById("Cart");
 
 
 /** Verifier si le panier est vide */
@@ -25,13 +22,15 @@ if(ProduitsEnregistrésDansLocalStorage === null){
 
 /**Sinon, Afficher les éléments contenus dans le panier */
 else{
-let CartTable = [];
-console.log(ProduitsEnregistrésDansLocalStorage);
 
-for(b=0; b < ProduitsEnregistrésDansLocalStorage.lenght; b++ ){
-
-   
-
-}
+    ProduitsEnregistrésDansLocalStorage.forEach(function(Article){
+       let tr = document.createElement('tr');
+       
+     
+       document.getElementById('Cart__cont--body').appendChild(tr)
     
-}
+       
+       tr.textContent = Article.Type + '     ' +Article.Lens + '     ' + Article.Quantity +'     ' + Article.Price
+      
+    });
+ }
