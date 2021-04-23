@@ -36,13 +36,15 @@
                             <th>Modèle</th>
                             <th>Objectif</th>
                             <th>Quantité</th>
-                            <th>Prix</th>
+                            <th>Prix Unitaire</th>
                             <th></th>
+                            <th>Sous-Total</th>
                         </tr>
                     </thead>
                 <tbody id="Cart__cont--body">
                     
                 </tbody>
+               
                 <tfoot>
                     <tr>
                         <td colspan="3">Total de la commande</td>
@@ -75,8 +77,8 @@
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                 </p>
-                <input type="hidden" name="products" id="products" value="#">
-                <button type="submit" class="Btn-go">Valider votre commande</button>
+                
+                <button type="submit" class="Btn-go" id="Btn-go">Valider votre commande</button>
             </form>
     
             <button class="btn-cancel">Annuler</button>
