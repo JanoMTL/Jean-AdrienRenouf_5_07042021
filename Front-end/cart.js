@@ -13,8 +13,9 @@ const Contener = document.getElementById("Cart");
 
 /** Verifier si le panier est vide */
 
-if(ProduitsEnregistrésDansLocalStorage === null){
+if(ProduitsEnregistrésDansLocalStorage === null || ProduitsEnregistrésDansLocalStorage ==0) {
 
+    
     /**Si le panier est vide, Afficher un message "Le Panier est Vide " */
 
     Contener.innerHTML = `<div class="EmptyCart"> Le Panier est Vide </div>`
@@ -28,44 +29,105 @@ else{
 
 for(k=0;k<ProduitsEnregistrésDansLocalStorage.length; k++){
 
-
+    
     table = table + ` 
-    <tr id="cartLine">
+    <tr class"cartLine">
         <th> ${ProduitsEnregistrésDansLocalStorage[k].Type}</th>
         <th> ${ProduitsEnregistrésDansLocalStorage[k].Lens}</th>
         <td> ${ProduitsEnregistrésDansLocalStorage[k].Quantity}</td>
         <td> ${ProduitsEnregistrésDansLocalStorage[k].Price}</td>
         <th> € </th>
         <th><button class="btn-Suppr"><i class="far fa-trash-alt"></button></i> </th>
-     </tr>`;}
+     </tr>`;
+    }
+
+     
+
 
      if(k === ProduitsEnregistrésDansLocalStorage.length){ 
      cartDisplay.innerHTML = table;
    }  
 }
+/** ----------------AFFICHER LE PRIX TOTAL DU PANIER-------------------- */
+
+/** Déclaration de la variable qui contient les prix du panier */
+
+const TotalPrice = []
+
+/**Aller chercher les prix dans le panier */
+
+for (let r = 0 ; r<ProduitsEnregistrésDansLocalStorage.length; r++){
+
+    /** Multiplier les prix et les quantités pour obtenir les sous-totaux */
+
+  let subTotalPrice = ProduitsEnregistrésDansLocalStorage[r].Quantity*ProduitsEnregistrésDansLocalStorage[r].Price;
+
+  /** Créer un tableau avec tous les sous-totaux */
+
+  TotalPrice.push(subTotalPrice);
 
 
-/**Supprimer des articles du panier */
 
+  /** additionner tous les sous-totaux pour obtenir le total général */
+  
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+let GranTotal = TotalPrice.reduce(reducer);
+
+/** Injecter le Prix Total dans le HTML */
+
+const InjectPrice = document.getElementById("Cart__cont--total");
+InjectPrice.innerHTML = `${GranTotal}`
+
+}
+
+/** ------------------FIN AFFICHER LE PRIX TOTAL DU PANIER---------------------- */
+
+/**-------------------------SUPPRIMER DES ARTICLES DU PANIER ------------------- */
+
+
+/**Sélectionner les boutons "supprimer" */
 let btnSuppr = document.querySelectorAll('.btn-Suppr');
 
+/** Ecouter les boutons "supprimer" */
 for(let p=0; p<btnSuppr.length; p++){
     btnSuppr[p].addEventListener("click",(ee) =>{ 
         ee.preventDefault(); 
-        
-    let IdProdToDelete = ProduitsEnregistrésDansLocalStorage[p].ID;
-    console.log(ProduitsEnregistrésDansLocalStorage[p].ID);
+/** Récuperer l'ID correspondant au bouton du produit à supprimer */
 
-  ProduitsEnregistrésDansLocalStorage = ProduitsEnregistrésDansLocalStorage.filter(element => element.ID ==IdProdToDelete)
+        let deleteSelected = ProduitsEnregistrésDansLocalStorage[p].ID; 
 
+
+/** Sélectionner les produits à conserver (tous les produits ormis celui sélectionné) */
+    function filtrerByID(obj) {
+        if (obj.ID !== deleteSelected) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+let ArticleToKeep = ProduitsEnregistrésDansLocalStorage.filter(filtrerByID)
+
+/**  Mise à jour de la Variable de stockage du panier */
+
+ProduitsEnregistrésDansLocalStorage = ArticleToKeep 
+
+/*  Mise à jour du nouveau panier dans le local Storage */
+
+localStorage.setItem("products", JSON.stringify (ProduitsEnregistrésDansLocalStorage))
+/** Rechargement de la page Panier pour retirer les articles supprimés */
+
+window.location.href = "cart.html"
+ 
 
 });
 
 }
 
- /**------------------VALIDER LA COMMANDE----------------------------- */
+ /**---------------------------VALIDER LA COMMANDE----------------------------- */
 
- /** Selectionner le le bouton "Valider votre commande" et ajouter un EventListener */
+ /** Selectionner le bouton "Valider votre commande" et ajouter un EventListener */
 
  const btnValidate = document.getElementById("Btn-go");
  btnValidate.addEventListener("click", (e) =>{
@@ -157,7 +219,7 @@ function emailControl(){
      };
 
 
-/**------------FIN VERIFICATION DES INFORMATIONS AVANT VALIDATION DE L'ENVOI */
+/**------------FIN VERIFICATION DES INFORMATIONS AVANT VALIDATION DE L'ENVOI------- */
 
 
 
@@ -167,18 +229,18 @@ localStorage.setItem("UserInfos", JSON.stringify (user))
 
 /** Envoi de la commande au server */
 
-/*const options = {
+const options = {
     method: "POST", 
     headers:{
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify(user, ProduitsEnregistrésDansLocalStorage), 
+    body: JSON.stringify(ProduitsEnregistrésDansLocalStorage), 
 
 }
 
 const placeOrder = fetch("http://localhost:3000/api/cameras/order", options);
 
-*/
+
 }
 else{
     alert( "Oups, Il semberait que les informations renseignées ne sont pas correctes, Merci de vérifier les champs encadrés de rouge. ")
@@ -186,3 +248,5 @@ else{
 
 
  });
+
+ /** -------------------------FIN VALIDER LA COMMANDE------------------------------ */
