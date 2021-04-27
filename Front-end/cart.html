@@ -12,6 +12,8 @@
     crossorigin="anonymous"
   />
     <script src="/Front-end/cart.js" defer></script>
+    
+
     <title>Orinoco - Votre panier</title>
     </head>
 
@@ -57,6 +59,7 @@
         <section class="Form" id="Form">
             <h2> Vos informations </h2>
             <form class="Form__cart--form">
+                <p>Tous les champs ci-dessous sont requis</p>
                 <p>
                     <label for="firstname">Prénom</label>
                     <input type="text" name="firstname" id="firstname" required>
@@ -69,16 +72,18 @@
                     <label for="address">Adresse</label>
                     <input type="text" name="address" id="address" required>
                 </p>
+                
                 <p>
                     <label for="city">Ville</label>
                     <input type="text" name="city" id="city" required>
                 </p>
+                
                 <p>
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                 </p>
                 
-                <button type="submit" class="Btn-go" id="Btn-go">Valider votre commande</button>
+                <button class="Btn-go" id="Btn-go">Valider votre commande</button>
             </form>
     
             <button class="btn-cancel">Annuler</button>

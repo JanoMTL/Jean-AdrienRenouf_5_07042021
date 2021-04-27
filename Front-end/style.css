@@ -74,4 +74,8 @@
 .nav__menu--elt {
   height: 20%;
 }
+
+#Cart__cont--body {
+  border: black solid thin;
+}
 /*# sourceMappingURL=style.css.map */

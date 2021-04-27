@@ -71,6 +71,9 @@ const id = params.get('id')
     cloneElement.getElementById("camera__description").textContent = article.description
     cloneElement.getElementById("camera__img").src = article.imageUrl
     cloneElement.getElementById("camera__price").textContent = article.price/100 
+    cloneElement.getElementById("camera__id").setAttribute('value', article._id) 
+
+    
     document.getElementById('main').appendChild(cloneElement)
 
     
@@ -88,12 +91,14 @@ const id = params.get('id')
         const cameraPrice = article.price/100
         const cameraLens = document.getElementById('lens_select')[selector.selectedIndex].id
         const cameraQuantity = document.getElementById('Quantity')[selector1.selectedIndex].id
-        
+        const cameraId = document.getElementById("camera__id").value
+
         const order = {
             Type:cameraType, 
             Price:cameraPrice, 
             Lens:cameraLens, 
-            Quantity:cameraQuantity }
+            Quantity:cameraQuantity,
+            ID: cameraId }
             
            
             
