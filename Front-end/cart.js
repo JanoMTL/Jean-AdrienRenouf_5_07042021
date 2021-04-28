@@ -1,6 +1,6 @@
 /**Vérifier si le panier contient des données et les convertir en objet JS (via JSON.Parse) */
 
-let ProduitsEnregistrésDansLocalStorage = JSON.parse(
+let Cart = JSON.parse(
   localStorage.getItem("products")
 );
 
@@ -13,8 +13,8 @@ const Contener = document.getElementById("Cart");
 /** Verifier si le panier est vide */
 
 if (
-  ProduitsEnregistrésDansLocalStorage === null ||
-  ProduitsEnregistrésDansLocalStorage == 0
+  Cart === null ||
+  Cart == 0
 ) {
   /**Si le panier est vide, Afficher un message "Le Panier est Vide " */
 
@@ -25,21 +25,21 @@ if (
   let table = [];
   let cartDisplay = document.getElementById("Cart__cont--body");
 
-  for (k = 0; k < ProduitsEnregistrésDansLocalStorage.length; k++) {
+  for (k = 0; k < Cart.length; k++) {
     table =
       table +
       ` 
     <tr class"cartLine">
-        <th> ${ProduitsEnregistrésDansLocalStorage[k].Type}</th>
-        <th> ${ProduitsEnregistrésDansLocalStorage[k].Lens}</th>
-        <td> ${ProduitsEnregistrésDansLocalStorage[k].Quantity}</td>
-        <td> ${ProduitsEnregistrésDansLocalStorage[k].Price}</td>
+        <th> ${Cart[k].Type}</th>
+        <th> ${Cart[k].Lens}</th>
+        <td> ${Cart[k].Quantity}</td>
+        <td> ${Cart[k].Price}</td>
         <th> € </th>
         <th><button class="btn-Suppr"><i class="far fa-trash-alt"></button></i> </th>
      </tr>`;
   }
 
-  if (k === ProduitsEnregistrésDansLocalStorage.length) {
+  if (k === Cart.length) {
     cartDisplay.innerHTML = table;
   }
 }
@@ -51,12 +51,12 @@ const TotalPrice = [];
 
 /**Aller chercher les prix dans le panier */
 
-for (let r = 0; r < ProduitsEnregistrésDansLocalStorage.length; r++) {
+for (let r = 0; r < Cart.length; r++) {
   /** Multiplier les prix et les quantités pour obtenir les sous-totaux */
 
   let subTotalPrice =
-    ProduitsEnregistrésDansLocalStorage[r].Quantity *
-    ProduitsEnregistrésDansLocalStorage[r].Price;
+    Cart[r].Quantity *
+    Cart[r].Price;
 
   /** Créer un tableau avec tous les sous-totaux */
 
@@ -67,11 +67,17 @@ for (let r = 0; r < ProduitsEnregistrésDansLocalStorage.length; r++) {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
   let GranTotal = TotalPrice.reduce(reducer);
+  
 
   /** Injecter le Prix Total dans le HTML */
 
   const InjectPrice = document.getElementById("Cart__cont--total");
   InjectPrice.innerHTML = `${GranTotal}`;
+
+
+  /**Envoyer le prix total dans le local Storage  */
+
+  localStorage.setItem('totalPrice', JSON.stringify(GranTotal))
 }
 
 /** ------------------FIN AFFICHER LE PRIX TOTAL DU PANIER---------------------- */
@@ -87,7 +93,7 @@ for (let p = 0; p < btnSuppr.length; p++) {
     ee.preventDefault();
     /** Récuperer l'ID correspondant au bouton du produit à supprimer */
 
-    let deleteSelected = ProduitsEnregistrésDansLocalStorage[p].ID;
+    let deleteSelected = Cart[p].ID;
 
     /** Sélectionner les produits à conserver (tous les produits ormis celui sélectionné) */
 
@@ -99,17 +105,17 @@ for (let p = 0; p < btnSuppr.length; p++) {
      */
     const filtrerByID = (obj) => obj.ID !== deleteSelected;
 
-    let ArticleToKeep = ProduitsEnregistrésDansLocalStorage.filter(filtrerByID);
+    let ArticleToKeep = Cart.filter(filtrerByID);
 
     /**  Mise à jour de la Variable de stockage du panier */
 
-    ProduitsEnregistrésDansLocalStorage = ArticleToKeep;
+    Cart = ArticleToKeep;
 
     /*  Mise à jour du nouveau panier dans le local Storage */
 
     localStorage.setItem(
       "products",
-      JSON.stringify(ProduitsEnregistrésDansLocalStorage)
+      JSON.stringify(Cart)
     );
     /** Rechargement de la page Panier pour retirer les articles supprimés */
 
@@ -233,9 +239,9 @@ btnValidate.addEventListener("click", (e) => {
 
     let products = [];
 /** création d'un tableau  "products" avec les ID produits pour envoi au server*/
-    for( f=0; f<ProduitsEnregistrésDansLocalStorage.length; f++){
+    for( f=0; f<Cart.length; f++){
 
-        let Idlist = ProduitsEnregistrésDansLocalStorage[f].ID
+        let Idlist = Cart[f].ID
         products.push(Idlist)
    
     }
@@ -245,7 +251,7 @@ btnValidate.addEventListener("click", (e) => {
 
     const Order = {contact, products}
 
- 
+    
     
 
     /** envoi de la commande ("contact") sur le local Storage */
@@ -254,9 +260,10 @@ btnValidate.addEventListener("click", (e) => {
 
 
     
-    /** Envoi de la commande au server */
+    /** Envoi de la commande au serveur */
 
-    const options = {
+  
+        const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -264,19 +271,56 @@ btnValidate.addEventListener("click", (e) => {
       body: JSON.stringify(Order)
     };
   
-   fetch(
+   const finalOrder = fetch(
       "http://localhost:3000/api/cameras/order",
       options
     )
-    .then(res => res.json())
+  
 
-    /** stockage de la confirmation du serveur dans le localStorage  */
+    /** Gestion de la réponse du serveur  */
 
-.then(res => localStorage.setItem("confirmation", JSON.stringify(res)))
+finalOrder.then(async(response) =>{
+
+  
+  try{
+    const serverResponse = await response.json();
+    
+/** Si réponse OK, stocker la réponse dans le local storage  */
+if(response.ok){
+localStorage.setItem('PurchaseConfirmation', JSON.stringify (serverResponse))
+
+/** Rediriger vers page de confirmation */
+
+window.location.href = 'confirmation.html'
+
+}
+
+/** Sinon afficher le statut pour voir l'erreur */
+else{
+  console.log(`Réponse du serveur : ${response.status}`)
+
+}
+  }
+
+  /** gestion erreur client */
+
+  catch(err){
+    alert(`ERREUR catch ${err}`)
+
+  }
+
+});
+
+ 
+   
+
+    
+
+
+
 
 /** redirection vers la page de confirmation */
 
-window.location.href = 'confirmation.html'
 
    }
 });

@@ -34,7 +34,7 @@ const id = params.get('id')
 
 
  
-/** Affichage des données correspondant à l'article cliké */
+/** Affichage des données correspondant à l'article cliqué */
  
  
  function displayArticles(article){
@@ -109,29 +109,29 @@ const id = params.get('id')
     /** Vérifier si le panier contient des données et les convertir en objet JS (via JSON.Parse) */
 
 
-    let ProduitsEnregistrésDansLocalStorage = JSON.parse(localStorage.getItem("products"))
+    let Cart = JSON.parse(localStorage.getItem("products"))
 
 
     /** Pop-Up confirmation d'ajout au panier */
 
-  
 
 
 
-    /** Si il y a déjà des produits d'enregistré dans le localStorage */
 
-    if (ProduitsEnregistrésDansLocalStorage){
-        ProduitsEnregistrésDansLocalStorage.push(order);
-        localStorage.setItem("products", JSON.stringify (ProduitsEnregistrésDansLocalStorage))
+    /** Si il y a déjà des produits d'enregistrés dans le localStorage */
+
+    if (Cart){
+        Cart.push(order);
+        localStorage.setItem("products", JSON.stringify (Cart))
         
         
 
     }
 
     /**Si il n'y a pas de produits d'enregistré dans le LocalStorage */
-    else{ProduitsEnregistrésDansLocalStorage = []
-        ProduitsEnregistrésDansLocalStorage.push(order);
-        localStorage.setItem("products", JSON.stringify (ProduitsEnregistrésDansLocalStorage))
+    else{Cart = []
+        Cart.push(order);
+        localStorage.setItem("products", JSON.stringify (Cart))
         
 
     }
