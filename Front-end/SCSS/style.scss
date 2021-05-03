@@ -1,0 +1,520 @@
+
+
+
+
+/*----------------GENERAL---------------*/
+
+.body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    &__header {
+      background-color: #f3e9f1;
+      width: 100%;
+      height: 5rem;
+      &--nav {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  h1, h2, h3, p, a{
+    text-decoration: none;
+}
+/*----------------FIN GENERAL---------------*/
+
+    /* HEADER */
+  
+    .nav__logo {
+        width: 40%;
+        height: 1;
+        &--img {
+          width: 100%;
+          height: 5rem;
+          margin-left: 10%;
+        }
+      }
+      
+      .nav__menu {
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
+        height: 80%;
+        align-items: flex-end;
+      
+        &--elt {
+          font-size: 0.2rem;
+        }
+        .fa-shopping-cart{
+            font-size: 1.5rem;
+            color: rgb(87, 26, 144);
+                &:hover{
+                    color: rgb(100, 99, 99);
+                }
+    
+        }
+      }
+
+
+      /** ----------------FIN HEADER--------------*/
+
+ /**------------------SECTION ACCUEIL INDEX-------------*/
+  .main {
+    width: 100%;
+    height: 138rem;
+    background-image: url(/Front-end/img/boisblanc.jpg);
+  
+    &__welcome {
+      background-image: url(/Front-end/img/Camera-vintage-small-black.jpg);
+      height: 20%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &--title {
+        color: white;
+        font-size: 2rem;
+      }
+      &--subtitle {
+        color: white;
+        text-align: center;
+        font-size: large;
+        width: 90%;
+      }
+      &--btn {
+        border-radius: 2rem;
+        height: 10%;
+        width: 45%;
+        background-color: #f3e9f1 ;
+        -webkit-box-shadow: -1px 3px 15px 6px rgba(9,9,9,0.4); 
+        box-shadow: -1px 3px 15px 6px rgba(9,9,9,0.4); 
+            &:hover{
+                -webkit-box-shadow: -1px 1px 14px 9px rgba(9,9,9,0.51); 
+                box-shadow: -1px 1px 28px 9px rgba(251,251,251,0.17)
+
+            } 
+
+      }
+    }
+  }
+  #Cart__cont--body {
+    border: black solid thin;
+  }
+  
+
+  #btn-style{
+      font-size: larger;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      
+  }
+
+  /**------------------ Fin SECTION ACCUEIL INDEX-------------*/
+
+/**-------------------CARDS INDEX------------------------------*/
+
+  #card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &:hover{
+
+        .camera{
+         animation: card-anim;
+         animation-duration: 1s;
+         animation-fill-mode: forwards;
+             }
+        }
+  }
+  
+  .camera {
+    width: 75%;
+    height: 19rem;
+    margin-top: 2rem;
+    background-color: #fdfafd;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 1px 28px 9px rgba(251,251,251,0); 
+box-shadow: 0px 10px 13px -7px #000000, -1px 1px 28px 9px rgba(251,251,251,0);
+    border-radius: 1rem;
+  }
+  .camera__img {
+    display: flex;
+    position: relative;
+    bottom: 1rem;
+  }
+  
+  #camera__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+    
+  #camera__title {
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 1.5rem;
+  }
+  #camera__price {
+    text-align: center;
+    position: relative;
+    bottom: 2.5rem;
+    color: rgb(64, 63, 63);
+    font-weight: 800;
+
+  }
+ 
+ /**------------------- Fin CARDS iNDEX------------------------------*/ 
+
+/** -----------------FOOTER-------------------*/
+  
+  
+  .footer {
+    display: flex;
+    justify-content: space-evenly;
+  
+    align-items: center;
+    height: 5rem;
+    background-color: #f3e9f1;
+  }
+  .fab,
+  .fas {
+    font-size: 2rem;
+    color: rgb(87, 26, 144);
+  }
+  /** ---------------- Fin FOOTER-------------------*/
+
+
+
+
+/**------------------------PAGE PRODUCTS--------------*/
+.camera2{
+    width: 100%;
+    height: 45rem;
+}
+.main2{
+    height: 50rem;
+    display: flex;
+    
+    
+
+}
+#camera__description{
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.1rem;
+    padding: 2%;
+    
+}
+.camera__price2{
+   
+    font-size: 1.5rem;
+}
+#Euro{
+    position: relative;
+    left: 15rem;
+    bottom: 5.6rem;
+    font-size: 1.4rem;
+    
+}
+#form{
+    background-color: #f3e9f1;
+    position: relative;
+    bottom: 3rem;
+    height: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+    border: darkgray thin solid;
+  
+}
+.label{
+    font-weight: bold;
+    position: relative;
+    left: 1rem;
+    bottom: 0.3rem;
+}
+.lens_select{
+    width: 80%;
+    height: 2rem;
+    margin-left: 1rem;
+}
+.Quantity{
+    width: 80%;
+    height: 2rem;
+    margin-left: 1rem;
+}
+
+#btn-Products{
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  height: 2.5rem;
+  position: relative;
+  bottom: 4.5rem;
+  margin: 0 5% 0 5%;
+}
+#btnAddToCart{
+    position: relative;
+    height: 100%;
+    width: 35%;
+    background-color: rgba(216, 252, 153, 0.428);
+    border-radius: 0.4rem;
+    border: darkolivegreen solid;
+    animation:rebound 5s infinite linear;
+
+}
+
+#btnBackToIndex{
+    height: 100%;
+    width: 35%;
+    border-radius: 0.4rem;
+    
+    
+    
+}
+
+
+
+/**------------------FIN PAGE PRODUCTS--------------*/
+
+
+/** ------------------PAGE CART------------------------*/
+
+#main_cart {
+    width: 100%;
+    height: fit-content;
+    background-image: url(/Front-end/img/boisblanc.jpg);
+    border: black solid thin;
+}
+
+.Formulaire{
+    background-color: rgba(0, 0, 0, 0.163);
+    width: 100%;
+    height: fit-content;
+}
+.Cart{
+    background-color: rgba(0, 0, 0, 0.68);
+    border: black thin solid;
+    height: auto;
+        &__subtitle{
+            text-align: center;
+            color: white;
+            padding-top: 5%;
+            font-size: 2rem;
+            
+            
+        }
+}
+#LegendLine{
+    border-bottom: solid rgba(21, 6, 35, 0.347) ;
+    font-size: 1.2rem;
+}
+
+#LegendLine th{
+  color: rgb(87, 26, 144)
+}
+#totelLine{
+    border-top:solid rgba(21, 6, 35, 0.347) ;
+    font-weight: bold;
+    font-size: large;
+}
+th,td{
+    color: rgb(3, 3, 3);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#Table_on, #Table{
+    width: 100%;
+}
+
+
+#Table{
+    background-color: #f3e9f1;
+}
+tr{
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+margin: 0 2.5% 0 2.5%;
+    
+}
+.ProdName{
+    width: 25%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    
+}
+#ProdName{
+  font-weight:bold;
+}
+
+.ProdLens{
+    width: 25%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    
+}
+#ProdLens{
+  font-weight: bold;
+}
+
+.ProdQty{
+    width: 10%;
+    height: auto;
+    text-align: center;
+    
+}
+
+.ProdPrice{
+    width: 20%;
+    text-align: center;
+}
+.Prodeuro{
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.btn-Suppr{
+   &:hover{
+     color: blueviolet;
+     cursor: pointer;
+   }
+}
+
+#Confirm{
+  text-align: center;
+  width: 90%;
+  margin: 0 5% 0 5%;
+  margin-top: 2rem;
+}
+#form2{
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5% 0 5%;
+  
+
+
+}
+#Champs{
+  width: 100%;
+  color: rgb(87, 26, 144);
+  text-align: center;
+  font-style:oblique;
+  font-weight: bolder;
+}
+#asterisque{
+  color: rgb(87, 26, 144);
+  font-weight: bolder;
+
+}
+.inputcart{
+  border:black solid thin;
+  width: 100%;
+  height: 1.6rem;
+  border-radius: 0.2rem;
+  
+
+}
+.labelcart{
+  font-weight: bolder;
+}
+
+#Btn-go{
+    height: 2.5rem;
+    width: 35%;
+    color: white;
+    background-color: rgba(87, 26, 144, 0.932);
+    border-radius: 0.4rem;
+    border: none;
+    box-shadow: 5px 5px 16px 3px rgba(0,0,0,0.78) ;
+    font-weight: bold;
+    animation:rebound 5s infinite linear;
+    position:relative;
+   
+    
+      &:hover{
+      cursor: pointer;
+      box-shadow:  5px 5px 25px 7px rgba(0,0,0,0.89);
+
+    }
+
+}
+.btn-cancel{
+  height: 2.5rem;
+  width: 35%;
+  border-radius: 0.4rem;
+  border: none;
+  box-shadow: 5px 5px 16px 3px rgba(0,0,0,0.78);
+    &:hover{
+      cursor: pointer;
+      box-shadow: 5px 5px 25px 7px rgba(0,0,0,0.89);
+    }
+}
+#buttonCart{
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: 1rem 5% 3rem 5%;
+ 
+}
+
+
+/**----------------FIN PAGE CART ----------------------*/
+
+
+
+
+
+
+
+
+
+
+/**----------------ANIMATIONS------------*/
+  
+    @keyframes card-anim {
+    0% {
+        opacity: 0.9;
+        transform: scale(1)
+      }
+    
+      100% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    
+}
+
+
+
+@keyframes rebound {
+  0%{
+    top:0em}
+  40%{top:0em}
+  43%{top:-0.9em}
+  46%{top:0em}
+  48%{top:-0.4em}
+  50%{top:0em}
+  100%{top:0em;}
+  }
+/**----------------Fin ANIMATIONS------------*/
