@@ -57,6 +57,9 @@ h1, h2, h3, p, a {
 }
 
 .nav__menu--elt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.2rem;
 }
 
@@ -67,6 +70,24 @@ h1, h2, h3, p, a {
 
 .nav__menu .fa-shopping-cart:hover {
   color: #646363;
+}
+
+#ArtNumber {
+  background-color: rgba(214, 79, 79, 0.938);
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  right: 0.8rem;
+  bottom: 0.3rem;
 }
 
 /** ----------------FIN HEADER--------------*/
@@ -727,10 +748,6 @@ tr {
   .nav__logo--img {
     width: 60%;
   }
-  .fa-shopping-cart {
-    position: relative;
-    left: 3rem;
-  }
   .main__welcome--btn {
     width: 25%;
   }
@@ -801,10 +818,6 @@ tr {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-  .fa-shopping-cart {
-    position: relative;
-    left: 7rem;
   }
   .nav__logo--img {
     width: 30%;

@@ -11,7 +11,7 @@ function DisplayNumber(){
     
     
     if(CartNumber == null){
-        console.log( 'panier vide')
+      LoctoDisplay.style.opacity = 0;
     }
     else{
         LoctoDisplay.innerText = CartNumber
@@ -76,9 +76,6 @@ const TotalPrice = [];
 /**Aller chercher les prix dans le panier */
 if(Cart){
   
-
-
-
 for (let r = 0; r < Cart.length; r++) {
   /** Multiplier les prix et les quantités pour obtenir les sous-totaux */
 

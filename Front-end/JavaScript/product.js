@@ -13,7 +13,7 @@ function DisplayNumber(){
     
     
     if(CartNumber == null){
-        console.log( 'panier vide')
+        LoctoDisplay.style.opacity = 0;
     }
     else{
         LoctoDisplay.innerText = CartNumber
