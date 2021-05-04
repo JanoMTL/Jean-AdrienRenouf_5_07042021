@@ -12,11 +12,14 @@ let Order = PurchaseOrder.orderId
 
 
 
-document.getElementById('main').innerHTML = `
-<h1>Votre commande est confirmée. Merci pour votre confiance ${userName} !</h1>
-        <p>Montant total:${totalPrice} € </p>
-        <p>Votre numéro de commande est le ${Order}</p>
-        <button><a href="index.html"> Revenir à la page d'accueil</a></button>
-        
+document.getElementById('message').innerHTML = `
+<h1 class="confMessage">Votre commande est confirmée. Merci pour votre confiance ${userName} !</h1>
+        <p id="totalPrice">Montant total de vos achats: ${totalPrice} € </p>
+        <p id="orderNumber">Votre numéro de commande est le <br>${Order}</p>
+        <br>
+        <br>
+        <div id="btnbox">
+        <button id="finalbtn"><a href="index.html"> Revenir à la page d'accueil</a></button>
+        </div>
 
 `

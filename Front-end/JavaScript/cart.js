@@ -1,3 +1,26 @@
+
+/** Afficher le nombre d'elements dans le panier */
+
+
+
+
+DisplayNumber()
+function DisplayNumber(){ 
+    let CartNumber = JSON.parse(localStorage.getItem("NumberOfArticles"));
+    let LoctoDisplay = document.getElementById("ArtNumber");
+    
+    
+    if(CartNumber == null){
+        console.log( 'panier vide')
+    }
+    else{
+        LoctoDisplay.innerText = CartNumber
+    }
+    }
+
+
+
+
 /**Vérifier si le panier contient des données et les convertir en objet JS (via JSON.Parse) */
 
 let Cart = JSON.parse(
@@ -51,6 +74,10 @@ if (
 const TotalPrice = [];
 
 /**Aller chercher les prix dans le panier */
+if(Cart){
+  
+
+
 
 for (let r = 0; r < Cart.length; r++) {
   /** Multiplier les prix et les quantités pour obtenir les sous-totaux */
@@ -79,6 +106,7 @@ for (let r = 0; r < Cart.length; r++) {
   /**Envoyer le prix total dans le local Storage  */
 
   localStorage.setItem('totalPrice', JSON.stringify(GranTotal))
+}
 }
 
 /** ------------------FIN AFFICHER LE PRIX TOTAL DU PANIER---------------------- */
@@ -123,9 +151,41 @@ for (let p = 0; p < btnSuppr.length; p++) {
       "products",
       JSON.stringify(Cart)
     );
+    let Number = []
+    let ArticleNumber = JSON.parse(localStorage.getItem('products'));
+    
+    
+    
+         for (g = 0; g < ArticleNumber.length; g++){
+             let numberOfArticleOrdered = ArticleNumber[g].Quantity;
+             
+    
+             numberOfArticleOrdered = parseInt(numberOfArticleOrdered)
+             
+    
+             Number.push(numberOfArticleOrdered)    
+    
+             const reducer = (accumulator, currentvalue) => accumulator + currentvalue;
+             
+             let NumberToDisplay = (Number.reduce(reducer));
+    
+           
+             
+             
+             localStorage.setItem("NumberOfArticles", JSON.stringify (NumberToDisplay))
+
+             
+           
+             
+                   
+             
+         }
+
     /** Rechargement de la page Panier pour retirer les articles supprimés */
 
     window.location.href = "cart.html";
+
+
   });
 }
 const btnBackToIndex = document.getElementById('btn-cancel');
@@ -269,7 +329,7 @@ btnValidate.addEventListener("click", (e) => {
 
     localStorage.setItem("contact", JSON.stringify(Order))
 
-
+    
     
     /** Envoi de la commande au serveur */
 

@@ -116,13 +116,15 @@ h1, h2, h3, p, a {
   height: 10%;
   width: 45%;
   background-color: #f3e9f1;
-  -webkit-box-shadow: -1px 3px 15px 6px rgba(9, 9, 9, 0.4);
-  box-shadow: -1px 3px 15px 6px rgba(9, 9, 9, 0.4);
+  border: none;
+  -webkit-box-shadow: 5px 5px 19px 6px rgba(4, 4, 4, 0.12);
+  box-shadow: 5px 5px 19px 6px rgba(4, 4, 4, 0.12);
 }
 
 .main__welcome--btn:hover {
-  -webkit-box-shadow: -1px 1px 14px 9px rgba(9, 9, 9, 0.51);
-  box-shadow: -1px 1px 28px 9px rgba(251, 251, 251, 0.17);
+  -webkit-box-shadow: 5px 5px 34px 31px rgba(4, 4, 4, 0.27);
+  box-shadow: 5px 5px 34px 31px rgba(4, 4, 4, 0.27);
+  background-color: #f3e9f1d4;
 }
 
 #Cart__cont--body {
@@ -132,7 +134,7 @@ h1, h2, h3, p, a {
 #btn-style {
   font-size: larger;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
   color: black;
 }
 
@@ -173,6 +175,7 @@ h1, h2, h3, p, a {
   display: flex;
   position: relative;
   bottom: 1rem;
+  border: #000000 solid;
 }
 
 #camera__img {
@@ -199,6 +202,13 @@ h1, h2, h3, p, a {
   font-weight: 800;
 }
 
+.click {
+  position: relative;
+  bottom: 2.6rem;
+  width: 100%;
+  text-align: center;
+}
+
 /**------------------- Fin CARDS iNDEX------------------------------*/
 /** -----------------FOOTER-------------------*/
 .footer {
@@ -219,6 +229,22 @@ h1, h2, h3, p, a {
 .fas {
   font-size: 2rem;
   color: #571a90;
+}
+
+.fab:hover,
+.fas:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.footcont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+  height: 3rem;
 }
 
 /** ---------------- Fin FOOTER-------------------*/
@@ -244,13 +270,6 @@ h1, h2, h3, p, a {
 
 .camera__price2 {
   font-size: 1.5rem;
-}
-
-#Euro {
-  position: relative;
-  left: 15rem;
-  bottom: 5.6rem;
-  font-size: 1.4rem;
 }
 
 #form {
@@ -542,7 +561,92 @@ tr {
   margin: 1rem 5% 3rem 5%;
 }
 
+.EmptyCart {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
 /**----------------FIN PAGE CART ----------------------*/
+/**----------PAGE CONFIRMATION----------------------*/
+.body4 {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.mainC {
+  width: 100%;
+  height: 35rem;
+  background-size: cover;
+  border: black solid thin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#message {
+  background-color: rgba(0, 0, 0, 0.605);
+  width: 100%;
+  height: 25rem;
+  position: relative;
+}
+
+.confMessage {
+  color: white;
+  text-align: center;
+  width: 90%;
+  margin: 10% 5% 0 5%;
+}
+
+#totalPrice {
+  color: white;
+  text-align: center;
+  width: 90%;
+  margin: 1rem 5% 0 5%;
+}
+
+#orderNumber {
+  color: white;
+  text-align: center;
+  width: 90%;
+  margin: 1rem 5% 0 5%;
+}
+
+#btnbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#finalbtn {
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: #f3e9f1;
+  -webkit-box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.78);
+          box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.78);
+}
+
+#finalbtn:hover {
+  -webkit-box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+          box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+}
+
+#finalbtn a {
+  color: #000000;
+}
+
 /**----------------ANIMATIONS------------*/
 @-webkit-keyframes card-anim {
   0% {
@@ -618,4 +722,185 @@ tr {
 }
 
 /**----------------Fin ANIMATIONS------------*/
+/**--------------------TABLET---------------------*/
+@media (min-width: 500px) and (max-width: 800px) {
+  .nav__logo--img {
+    width: 60%;
+  }
+  .fa-shopping-cart {
+    position: relative;
+    left: 3rem;
+  }
+  .main__welcome--btn {
+    width: 25%;
+  }
+  .main__welcome {
+    background-image: url(/Front-end/img/Camera-vintage_tablet-black.jpg);
+    background-size: cover;
+    height: 22rem;
+  }
+  .mainIndex {
+    height: 67rem;
+  }
+  #card {
+    width: 30%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 1rem;
+  }
+  #Prodlist {
+    width: 100%;
+    height: 45rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .camera {
+    width: 100%;
+    height: 17rem;
+  }
+  .mainProducts {
+    height: 64rem;
+  }
+  .pict {
+    height: 25rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .camera2 {
+    height: 55rem;
+  }
+  .main3 {
+    background-image: url(/Front-end/img/Camera-vintage_tablet-black.jpg);
+    background-size: cover;
+  }
+}
+
+/**--------------------FIN TABLET---------------------*/
+/**------------------DESKTOP-----------------------*/
+@media (min-width: 801px) and (max-width: 3000px) {
+  .main {
+    height: 78rem;
+  }
+  .footcont {
+    width: 50%;
+  }
+  .main__welcome {
+    height: 30rem;
+    background-image: url(/Front-end/img/camera-vintage-Desktop-black.jpg);
+  }
+  #Prodlist {
+    width: 80%;
+    margin: 0 10% 0 17%;
+    height: 30rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .fa-shopping-cart {
+    position: relative;
+    left: 7rem;
+  }
+  .nav__logo--img {
+    width: 30%;
+  }
+  .main__welcome--btn {
+    width: 15%;
+  }
+  #card {
+    width: 30%;
+  }
+  .footer {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .fab, .fas {
+    font-size: 3rem;
+  }
+  .main__welcome--title {
+    font-size: 4rem;
+  }
+  .main__welcome--subtitle {
+    font-size: 2rem;
+  }
+  .pict {
+    height: 20rem;
+    width: 30rem;
+    margin-top: 4rem;
+  }
+  .camera2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 52rem;
+    width: 60%;
+    margin: 2% 20% 0 20%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .descr {
+    position: relative;
+    bottom: 5rem;
+  }
+  #form {
+    position: relative;
+    bottom: 5rem;
+    width: 100%;
+  }
+  #btnBackToIndex, #btnAddToCart {
+    width: 20%;
+  }
+  #btnBackToIndex:hover, #btnAddToCart:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 16px 1px rgba(0, 0, 0, 0.78);
+            box-shadow: 1px 1px 16px 1px rgba(0, 0, 0, 0.78);
+  }
+  .mainProducts {
+    height: 58rem;
+  }
+  /** ----------------CART Desktop--------------------------*/
+  .Cart__subtitle {
+    position: relative;
+    bottom: 1.6rem;
+  }
+  .CartDesk {
+    width: 50%;
+    margin: 0 25% 0 25%;
+  }
+  .FormDesk {
+    width: 50%;
+    margin: 0 25% 0 25%;
+    height: 42rem;
+  }
+  #Btn-go, #btn-cancel {
+    width: 20%;
+  }
+  #Btn-go:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+            box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+  }
+  #buttonCart {
+    position: relative;
+    top: 2rem;
+  }
+}
+
+/**-------------------CONFIRMATION Desktop-------------*/
+.mainConf {
+  background-image: url(/Front-end/img/camera-vintage-Desktop.jpg);
+  height: 40rem;
+}
+
+.messageConf {
+  width: 80%;
+}
 /*# sourceMappingURL=style.css.map */

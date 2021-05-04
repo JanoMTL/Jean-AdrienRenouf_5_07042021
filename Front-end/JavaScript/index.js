@@ -1,5 +1,28 @@
 
 
+
+
+/** Afficher le nombre d'elements dans le panier */
+
+
+
+
+DisplayNumber()
+function DisplayNumber(){ 
+    let CartNumber = JSON.parse(localStorage.getItem("NumberOfArticles"));
+    let LoctoDisplay = document.getElementById("ArtNumber");
+    
+    
+    if(CartNumber == null){
+        console.log( 'panier vide')
+    }
+    else{
+        LoctoDisplay.innerText = CartNumber
+    }
+    }
+
+
+
 main ()
 async function main(){
     const articles = await getArticles()
@@ -36,7 +59,7 @@ function displayArticles(article){
    cloneElement.getElementById("camera__price").textContent = 'À partir de ' + article.price/100 + ' €'
    cloneElement.getElementById("card").setAttribute("href", "product.html?id=" + article._id)
    
-   document.getElementById('main').appendChild(cloneElement)
+   document.getElementById('Prodlist').appendChild(cloneElement)
    
 }
 

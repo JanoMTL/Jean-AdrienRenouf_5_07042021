@@ -1,6 +1,27 @@
 
 
 
+/** Afficher le nombre d'elements dans le panier */
+
+
+
+
+DisplayNumber()
+function DisplayNumber(){ 
+    let CartNumber = JSON.parse(localStorage.getItem("NumberOfArticles"));
+    let LoctoDisplay = document.getElementById("ArtNumber");
+    
+    
+    if(CartNumber == null){
+        console.log( 'panier vide')
+    }
+    else{
+        LoctoDisplay.innerText = CartNumber
+    }
+    }
+
+
+
 /** Récupéation de l'ID du produit cliké dans l'URL */
 
 
@@ -77,15 +98,13 @@ const id = params.get('id')
     cloneElement.getElementById("camera__title").textContent = article.name
     cloneElement.getElementById("camera__description").textContent = article.description
     cloneElement.getElementById("camera__img").src = article.imageUrl
-    cloneElement.getElementById("camera__price").textContent = article.price/100 
+    cloneElement.getElementById("camera__price").textContent = article.price/100 + ' €'
     cloneElement.getElementById("camera__id").setAttribute('value', article._id) 
 
     
     document.getElementById('main').appendChild(cloneElement)
 
     const btnBackToIndex = document.getElementById('btnBackToIndex');
-
-    console.log(btnBackToIndex);
    
     btnBackToIndex.addEventListener('click', (ev) =>{
         ev.preventDefault();
@@ -96,7 +115,7 @@ const id = params.get('id')
 
      const selector = document.getElementById('lens_select');
      const selector1 = document.getElementById('Quantity');
-
+     
      
     const btnAdd = document.getElementById("btnAddToCart");
     btnAdd.addEventListener("click", () =>{
@@ -106,6 +125,7 @@ const id = params.get('id')
         const cameraLens = document.getElementById('lens_select')[selector.selectedIndex].id
         const cameraQuantity = document.getElementById('Quantity')[selector1.selectedIndex].id
         const cameraId = document.getElementById("camera__id").value
+        
 
         const order = {
             Type:cameraType, 
@@ -124,12 +144,7 @@ const id = params.get('id')
     let Cart = JSON.parse(localStorage.getItem("products"))
 
 
-    /** Pop-Up confirmation d'ajout au panier */
-
-
-
-
-
+   
     /** Si il y a déjà des produits d'enregistrés dans le localStorage */
 
     if (Cart){
@@ -148,7 +163,46 @@ const id = params.get('id')
 
     }
 
-    
+/**-----------------Rafraichissement Span Nombre de produit header-------------- */
+updateDiv()
+
+function updateDiv()
+    { 
+        document.getElementById("ArtNumber").innerText = document.getElementById("ArtNumber").innerText ;
+    } 
+
+
+     /** Pop-Up confirmation d'ajout au panier */
+
+
+
+let Number = []
+let ArticleNumber = JSON.parse(localStorage.getItem('products'));
+
+
+
+     for (g = 0; g < ArticleNumber.length; g++){
+         let numberOfArticleOrdered = ArticleNumber[g].Quantity;
+         
+
+         numberOfArticleOrdered = parseInt(numberOfArticleOrdered)
+         
+
+         Number.push(numberOfArticleOrdered)    
+
+         const reducer = (accumulator, currentvalue) => accumulator + currentvalue;
+         
+         let NumberToDisplay = (Number.reduce(reducer));
+        
+         
+         localStorage.setItem("NumberOfArticles", JSON.stringify (NumberToDisplay))
+
+         location.reload();
+         
+         
+               
+         
+     }
     
 
     })
