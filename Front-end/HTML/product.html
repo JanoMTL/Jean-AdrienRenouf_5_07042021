@@ -1,68 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Front-end/SCSS/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Front-end/SCSS/style.css" />
     <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
-    crossorigin="anonymous"
-  />
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
     <script src="/Front-end/JavaScript/product.js" defer></script>
-    
-    
-    
 
-    <title id="maintitle"></title>
-    </head>
+    <title id="maintitle">Fiche Produit</title>
+  </head>
 
-<body class="body body2 ">
+  <body class="body body2">
     <header class="body__header">
-        <nav class="body__header--nav">
-            <div class="nav__logo"><img src="/Front-end/img/Logo-Orinoco.jpg" alt="Logo Orinoco représentant un caddy multicolore sur fond blanc" class="nav__logo--img">
-            </div>
-            <div class="nav__menu">
-                <div class="nav__menu--elt" id="panier"> <a href="cart.html"><i class="fas fa-shopping-cart"></i></a><span id="ArtNumber"></span>  </div>          
-                </div>
-        </nav>
+      <nav class="body__header--nav">
+        <div class="nav__logo">
+          <a href="index.html" id="BackToMain"
+            ><img
+              src="/Front-end/img/Logo-Orinoco.jpg"
+              alt="Logo Orinoco représentant un caddy multicolore sur fond blanc"
+              class="nav__logo--img"
+          /></a>
+        </div>
+        <div class="nav__menu">
+          <div class="nav__menu--elt" id="panier">
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a
+            ><span id="ArtNumber"></span>
+          </div>
+        </div>
+      </nav>
     </header>
     <main class="main main2 mainProducts" id="main">
+      <template id="templateArticle">
+        <article class="camera camera2 camera3" id="camera-card">
+          <p class="camera__img pict"><img id="camera__img" class="img0" /></p>
+          <h3 class="camera__title" id="camera__title"></h3>
+          <h4 class="camera__description descr" id="camera__description"></h4>
+          <br />
+          <br />
+          <br />
+          <form method="POST" id="form" name="form">
+            <p>
+              <label for="lens_select" class="label">Objectif</label>
+              <select name="lens" id="lens_select" class="lens_select"></select>
+            </p>
 
-
-        <template id="templateArticle">
-            
-        <article class="camera camera2" id="camera-card">
-                <p class="camera__img pict " > <img id="camera__img" class="img0"></p>
-                <h3 class="camera__title" id="camera__title"></h3>
-                <h4 class="camera__description descr" id="camera__description"></h4>
-                <br>
-                <br>  
-                <br>          
-                <form method="POST" id="form" name="form">
-                <p><label for="lens_select" class="label">Objectif</label> <select name="lens" id="lens_select" class="lens_select"></select></p>
-                
-                <p><label for="Quantity" class="label">Quantité</label>  <select  name="quantity" id="Quantity" class="Quantity"></select></p> 
-                <input type="hidden" name="camera__id" id="camera__id">
-
-            </form>
-            <p class="camera__price camera__price2 cam" id="camera__price"> </p>
-            <div id="btn-Products" class="btn-Products">
-            <button id="btnBackToIndex">Retour à l'accueil</button>  
+            <p>
+              <label for="Quantity" class="label">Quantité</label>
+              <select name="quantity" id="Quantity" class="Quantity"></select>
+            </p>
+            <input type="hidden" name="camera__id" id="camera__id" />
+          </form>
+          <p class="camera__price camera__price2 cam" id="camera__price"></p>
+          <div id="btn-Products" class="btn-Products">
+            <button id="btnBackToIndex">Retour à l'accueil</button>
             <button id="btnAddToCart">Ajouter au Panier</button>
-            </div>   
-                
+          </div>
         </article>
-    
-    </template>
+      </template>
     </main>
     <footer class="footer">
-        <div class="footer__FB"><a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a></div>
-        <div class="footer__TW"><a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a></div>
-        <div class="footer__IG"><a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a></div>
-        <div class="footer__mail"><a href="mailto:contact@orinoco.com"><i class="fas fa-envelope-square"></i></a></div>
+      <div class="footer__FB">
+        <a href="https://www.facebook.com/"
+          ><i class="fab fa-facebook-square"></i
+        ></a>
+      </div>
+      <div class="footer__TW">
+        <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
+      </div>
+      <div class="footer__IG">
+        <a href="https://www.instagram.com/"
+          ><i class="fab fa-instagram-square"></i
+        ></a>
+      </div>
+      <div class="footer__mail">
+        <a href="mailto:contact@orinoco.com"
+          ><i class="fas fa-envelope-square"></i
+        ></a>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

@@ -5,7 +5,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 .body__header {
@@ -25,12 +25,30 @@
           justify-content: space-between;
 }
 
-h1, h2, h3, p, a {
+h1,
+h2,
+h3,
+p,
+a {
   text-decoration: none;
 }
 
 /*----------------FIN GENERAL---------------*/
 /* HEADER */
+.body__header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: rgba(87, 26, 144, 0.748) solid;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+#BackToMain {
+  outline: none;
+}
+
 .nav__logo {
   width: 40%;
   height: 1;
@@ -78,6 +96,7 @@ h1, h2, h3, p, a {
   height: 1rem;
   font-size: 0.8rem;
   font-weight: bold;
+  color: #f3e9f1;
   border-radius: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,15 +105,15 @@ h1, h2, h3, p, a {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  right: 0.8rem;
-  bottom: 0.3rem;
+  right: 0.6rem;
+  bottom: 0.5rem;
 }
 
 /** ----------------FIN HEADER--------------*/
 /**------------------SECTION ACCUEIL INDEX-------------*/
 .main {
   width: 100%;
-  height: 138rem;
+  height: 145rem;
   background-image: url(/Front-end/img/boisblanc.jpg);
 }
 
@@ -145,7 +164,10 @@ h1, h2, h3, p, a {
 .main__welcome--btn:hover {
   -webkit-box-shadow: 5px 5px 34px 31px rgba(4, 4, 4, 0.27);
   box-shadow: 5px 5px 34px 31px rgba(4, 4, 4, 0.27);
-  background-color: #f3e9f1d4;
+  -webkit-animation: card-anim;
+          animation: card-anim;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 #Cart__cont--body {
@@ -156,7 +178,10 @@ h1, h2, h3, p, a {
   font-size: larger;
   text-decoration: none;
   font-weight: normal;
+  text-align: center;
+  height: 6%;
   color: black;
+  font-style: italic;
 }
 
 /**------------------ Fin SECTION ACCUEIL INDEX-------------*/
@@ -194,8 +219,6 @@ h1, h2, h3, p, a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  bottom: 1rem;
   border: #000000 solid;
 }
 
@@ -228,6 +251,7 @@ h1, h2, h3, p, a {
   bottom: 2.6rem;
   width: 100%;
   text-align: center;
+  font-style: italic;
 }
 
 /**------------------- Fin CARDS iNDEX------------------------------*/
@@ -256,6 +280,10 @@ h1, h2, h3, p, a {
 .fas:hover {
   cursor: pointer;
   color: grey;
+  -webkit-animation: card-anim;
+          animation: card-anim;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 .footcont {
@@ -335,7 +363,7 @@ h1, h2, h3, p, a {
       justify-content: space-around;
   height: 2.5rem;
   position: relative;
-  bottom: 4.5rem;
+  bottom: 3rem;
   margin: 0 5% 0 5%;
 }
 
@@ -359,7 +387,10 @@ h1, h2, h3, p, a {
 /**------------------FIN PAGE PRODUCTS--------------*/
 /** ------------------PAGE CART------------------------*/
 .body3 {
-  font-family: 'PT Sans Narrow', sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 #main_cart {
@@ -388,7 +419,7 @@ h1, h2, h3, p, a {
 .Cart__subtitle {
   text-align: center;
   color: white;
-  padding-top: 5%;
+  padding-top: 20%;
   font-size: 2rem;
 }
 
@@ -407,7 +438,8 @@ h1, h2, h3, p, a {
   font-size: large;
 }
 
-th, td {
+th,
+td {
   color: #030303;
   height: 3rem;
   display: -webkit-box;
@@ -421,7 +453,8 @@ th, td {
           align-items: center;
 }
 
-#Table_on, #Table {
+#Table_on,
+#Table {
   width: 100%;
 }
 
@@ -519,7 +552,7 @@ tr {
   font-weight: bolder;
 }
 
-#asterisque {
+.asterisque {
   color: #571a90;
   font-weight: bolder;
 }
@@ -550,8 +583,7 @@ tr {
   position: relative;
 }
 
- 
-#Btn-go:hover {
+  #Btn-go:hover {
   cursor: pointer;
   -webkit-box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
           box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
@@ -592,10 +624,12 @@ tr {
 /**----------PAGE CONFIRMATION----------------------*/
 .body4 {
   width: 100%;
+  margin: 0;
+  padding: 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 .mainC {
@@ -662,6 +696,7 @@ tr {
 #finalbtn:hover {
   -webkit-box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
           box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+  cursor: pointer;
 }
 
 #finalbtn a {
@@ -775,12 +810,19 @@ tr {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  .Cart__subtitle {
+    padding-top: 10%;
+  }
   .camera {
     width: 100%;
     height: 17rem;
   }
   .mainProducts {
     height: 64rem;
+  }
+  .main__welcome--title {
+    position: relative;
+    top: 1rem;
   }
   .pict {
     height: 25rem;
@@ -808,6 +850,7 @@ tr {
   .main__welcome {
     height: 30rem;
     background-image: url(/Front-end/img/camera-vintage-Desktop-black.jpg);
+    background-size: cover;
   }
   #Prodlist {
     width: 80%;
@@ -832,11 +875,13 @@ tr {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  .fab, .fas {
+  .fab,
+  .fas {
     font-size: 3rem;
   }
   .main__welcome--title {
     font-size: 4rem;
+    padding-top: 1rem;
   }
   .main__welcome--subtitle {
     font-size: 2rem;
@@ -868,10 +913,12 @@ tr {
     bottom: 5rem;
     width: 100%;
   }
-  #btnBackToIndex, #btnAddToCart {
+  #btnBackToIndex,
+  #btnAddToCart {
     width: 20%;
   }
-  #btnBackToIndex:hover, #btnAddToCart:hover {
+  #btnBackToIndex:hover,
+  #btnAddToCart:hover {
     cursor: pointer;
     -webkit-box-shadow: 1px 1px 16px 1px rgba(0, 0, 0, 0.78);
             box-shadow: 1px 1px 16px 1px rgba(0, 0, 0, 0.78);
@@ -893,8 +940,9 @@ tr {
     margin: 0 25% 0 25%;
     height: 42rem;
   }
-  #Btn-go, #btn-cancel {
-    width: 20%;
+  #Btn-go,
+  #btn-cancel {
+    width: 30%;
   }
   #Btn-go:hover {
     cursor: pointer;
@@ -915,5 +963,14 @@ tr {
 
 .messageConf {
   width: 80%;
+}
+
+@media (min-width: 420px) and (max-width: 600px) {
+  .camera {
+    height: 21rem;
+  }
+  .camera3 {
+    height: 45rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

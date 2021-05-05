@@ -1,588 +1,571 @@
-
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 
 /*----------------GENERAL---------------*/
 
 .body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans Narrow", sans-serif;
+
+  &__header {
+    background-color: #f3e9f1;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'PT Sans Narrow', sans-serif;
-    
-    &__header {
-      background-color: #f3e9f1;
+    height: 5rem;
+    &--nav {
+      display: flex;
       width: 100%;
-      height: 5rem;
-      &--nav {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: space-between;
-      }
+      height: 100%;
+      justify-content: space-between;
     }
   }
+}
 
-  h1, h2, h3, p, a{
-    text-decoration: none;
+h1,
+h2,
+h3,
+p,
+a {
+  text-decoration: none;
 }
 /*----------------FIN GENERAL---------------*/
 
-    /* HEADER */
-  
-    .nav__logo {
-        width: 40%;
-        height: 1;
-        &--img {
-          width: 100%;
-          height: 5rem;
-          margin-left: 10%;
-        }
-      }
-      
-      .nav__menu {
-        display: flex;
-        justify-content: space-evenly;
-        width: 30%;
-        height: 80%;
-        align-items: flex-end;
-      
-        &--elt {
-          display: flex;
-          font-size: 0.2rem;
-        }
-        .fa-shopping-cart{
-            font-size: 1.5rem;
-            color: rgb(87, 26, 144);
-                &:hover{
-                    color: rgb(100, 99, 99);
-                }
-    
-        }
-      }
-#ArtNumber{
+/* HEADER */
+.body__header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: rgba(87, 26, 144, 0.748) solid;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+#BackToMain {
+  outline: none;
+}
+
+.nav__logo {
+  width: 40%;
+  height: 1;
+  &--img {
+    width: 100%;
+    height: 5rem;
+    margin-left: 10%;
+  }
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  height: 80%;
+  align-items: flex-end;
+
+  &--elt {
+    display: flex;
+    font-size: 0.2rem;
+  }
+  .fa-shopping-cart {
+    font-size: 1.5rem;
+    color: rgb(87, 26, 144);
+    &:hover {
+      color: rgb(100, 99, 99);
+    }
+  }
+}
+#ArtNumber {
   background-color: rgba(214, 79, 79, 0.938);
   width: 1rem;
   height: 1rem;
   font-size: 0.8rem;
   font-weight: bold;
+  color: #f3e9f1;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   position: relative;
-  right: 0.8rem;
-  bottom: 0.3rem;
- 
+  right: 0.6rem;
+  bottom: 0.5rem;
 }
 
-      /** ----------------FIN HEADER--------------*/
+/** ----------------FIN HEADER--------------*/
 
- /**------------------SECTION ACCUEIL INDEX-------------*/
-  .main {
+/**------------------SECTION ACCUEIL INDEX-------------*/
+.main {
+  width: 100%;
+  height: 145rem;
+  background-image: url(/Front-end/img/boisblanc.jpg);
+
+  &__welcome {
+    background-image: url(/Front-end/img/Camera-vintage-small-black.jpg);
+    height: 20%;
     width: 100%;
-    height: 138rem;
-    background-image: url(/Front-end/img/boisblanc.jpg);
-  
-    &__welcome {
-      background-image: url(/Front-end/img/Camera-vintage-small-black.jpg);
-      height: 20%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border: solid black;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      &--title {
-        color: white;
-        font-size: 2rem;
-      }
-      &--subtitle {
-        color: white;
-        text-align: center;
-        font-size: large;
-        width: 90%;
-      }
-      &--btn {
-        border-radius: 2rem;
-        height: 10%;
-        width: 45%;
-        background-color: #f3e9f1 ;
-        border: none;
-        -webkit-box-shadow: 5px 5px 19px 6px rgba(4,4,4,0.12); 
-        box-shadow: 5px 5px 19px 6px rgba(4,4,4,0.12);
-            &:hover{
-              -webkit-box-shadow: 5px 5px 34px 31px rgba(4,4,4,0.27); 
-              box-shadow: 5px 5px 34px 31px rgba(4,4,4,0.27);
-              background-color: #f3e9f1d4;
-
-            } 
-
+    margin: 0;
+    padding: 0;
+    border: solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &--title {
+      color: white;
+      font-size: 2rem;
+    }
+    &--subtitle {
+      color: white;
+      text-align: center;
+      font-size: large;
+      width: 90%;
+    }
+    &--btn {
+      border-radius: 2rem;
+      height: 10%;
+      width: 45%;
+      background-color: #f3e9f1;
+      border: none;
+      -webkit-box-shadow: 5px 5px 19px 6px rgba(4, 4, 4, 0.12);
+      box-shadow: 5px 5px 19px 6px rgba(4, 4, 4, 0.12);
+      &:hover {
+        -webkit-box-shadow: 5px 5px 34px 31px rgba(4, 4, 4, 0.27);
+        box-shadow: 5px 5px 34px 31px rgba(4, 4, 4, 0.27);
+        animation: card-anim;
+        animation-duration: 0.5s;
       }
     }
   }
-  #Cart__cont--body {
-    border: black solid thin;
-  }
-  
+}
 
-  #btn-style{
-      font-size: larger;
-      text-decoration: none;
-      font-weight: normal;
-      color: black;
-      
-  }
+#Cart__cont--body {
+  border: black solid thin;
+}
 
-  /**------------------ Fin SECTION ACCUEIL INDEX-------------*/
+#btn-style {
+  font-size: larger;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: center;
+  height: 6%;
+  color: black;
+  font-style: italic;
+}
+
+/**------------------ Fin SECTION ACCUEIL INDEX-------------*/
 
 /**-------------------CARDS INDEX------------------------------*/
 
-  #card {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
-    &:hover{
+#card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-        .camera{
-         animation: card-anim;
-         animation-duration: 1s;
-         animation-fill-mode: forwards;
-             }
-        }
-  }
- 
-  .camera {
-    width: 75%;
-    height: 19rem;
-    
-    margin-top: 2rem;
-    background-color: #fdfafd;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 1px 28px 9px rgba(251,251,251,0); 
-box-shadow: 0px 10px 13px -7px #000000, -1px 1px 28px 9px rgba(251,251,251,0);
-    border-radius: 1rem;
-  }
-  .camera__img {
-    display: flex;
-    position: relative;
-    bottom: 1rem;
-    border: #000000 solid;
-  }
-  
-  #camera__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-    
-  #camera__title {
-    width: 100%;
-    text-align: center;
-    color: black;
-    font-size: 1.5rem;
-    position: relative;
-    bottom: 1.5rem;
-  }
-  #camera__price {
-    text-align: center;
-    position: relative;
-    bottom: 2.5rem;
-    color: rgb(64, 63, 63);
-    font-weight: 800;
-
-  }
-
-  .click{
-    position: relative;
-    bottom: 2.6rem;
-    width: 100%;
-    text-align: center;
-  }
- 
- /**------------------- Fin CARDS iNDEX------------------------------*/ 
-
-/** -----------------FOOTER-------------------*/
-  
-  
-  .footer {
-    display: flex;
-    justify-content: space-evenly;
-  
-    align-items: center;
-    height: 5rem;
-    background-color: #f3e9f1;
-  }
-  .fab,
-  .fas {
-    font-size: 2rem;
-    color: rgb(87, 26, 144);
-    &:hover{
-      cursor: pointer;
-      color: grey;
+  &:hover {
+    .camera {
+      animation: card-anim;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
     }
   }
+}
 
-  .footcont{
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-    height: 3rem;
+.camera {
+  width: 75%;
+  height: 19rem;
+
+  margin-top: 2rem;
+  background-color: #fdfafd;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    -1px 1px 28px 9px rgba(251, 251, 251, 0);
+  box-shadow: 0px 10px 13px -7px #000000,
+    -1px 1px 28px 9px rgba(251, 251, 251, 0);
+  border-radius: 1rem;
+}
+.camera__img {
+  display: flex;
+
+  border: #000000 solid;
+}
+
+#camera__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#camera__title {
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 1.5rem;
+}
+#camera__price {
+  text-align: center;
+  position: relative;
+  bottom: 2.5rem;
+  color: rgb(64, 63, 63);
+  font-weight: 800;
+}
+
+.click {
+  position: relative;
+  bottom: 2.6rem;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+
+/**------------------- Fin CARDS iNDEX------------------------------*/
+
+/** -----------------FOOTER-------------------*/
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+  height: 5rem;
+  background-color: #f3e9f1;
+}
+.fab,
+.fas {
+  font-size: 2rem;
+  color: rgb(87, 26, 144);
+  &:hover {
+    cursor: pointer;
+    color: grey;
+    animation: card-anim;
+    animation-duration: 0.5s;
   }
-  /** ---------------- Fin FOOTER-------------------*/
+}
 
-
-
+.footcont {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  height: 3rem;
+}
+/** ---------------- Fin FOOTER-------------------*/
 
 /**------------------------PAGE PRODUCTS--------------*/
-.camera2{
-    width: 100%;
-    height: 45rem;
+.camera2 {
+  width: 100%;
+  height: 45rem;
 }
-.main2{
-    height: 50rem;
-    display: flex;
-    
-    
-
+.main2 {
+  height: 50rem;
+  display: flex;
 }
-#camera__description{
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.1rem;
-    padding: 2%;
-    
+#camera__description {
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.1rem;
+  padding: 2%;
 }
-.camera__price2{
-   
-    font-size: 1.5rem;
+.camera__price2 {
+  font-size: 1.5rem;
 }
 
-#form{
-    background-color: #f3e9f1;
-    position: relative;
-    bottom: 3rem;
-    height: 6rem;
-    display: flex;
-    justify-content: space-evenly;
-    border: darkgray thin solid;
-  
+#form {
+  background-color: #f3e9f1;
+  position: relative;
+  bottom: 3rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+  border: darkgray thin solid;
 }
-.label{
-    font-weight: bold;
-    position: relative;
-    left: 1rem;
-    bottom: 0.3rem;
+.label {
+  font-weight: bold;
+  position: relative;
+  left: 1rem;
+  bottom: 0.3rem;
 }
-.lens_select{
-    width: 80%;
-    height: 2rem;
-    margin-left: 1rem;
+.lens_select {
+  width: 80%;
+  height: 2rem;
+  margin-left: 1rem;
 }
-.Quantity{
-    width: 80%;
-    height: 2rem;
-    margin-left: 1rem;
+.Quantity {
+  width: 80%;
+  height: 2rem;
+  margin-left: 1rem;
 }
 
-#btn-Products{
+#btn-Products {
   display: flex;
   width: 90%;
   justify-content: space-around;
   height: 2.5rem;
   position: relative;
-  bottom: 4.5rem;
+  bottom: 3rem;
   margin: 0 5% 0 5%;
 }
-#btnAddToCart{
-    position: relative;
-    height: 100%;
-    width: 35%;
-    background-color: rgba(216, 252, 153, 0.428);
-    border-radius: 0.4rem;
-    border: darkolivegreen solid;
-    animation:rebound 5s infinite linear;
-
+#btnAddToCart {
+  position: relative;
+  height: 100%;
+  width: 35%;
+  background-color: rgba(216, 252, 153, 0.428);
+  border-radius: 0.4rem;
+  border: darkolivegreen solid;
+  animation: rebound 5s infinite linear;
 }
 
-#btnBackToIndex{
-    height: 100%;
-    width: 35%;
-    border-radius: 0.4rem;
-    
-    
-    
+#btnBackToIndex {
+  height: 100%;
+  width: 35%;
+  border-radius: 0.4rem;
 }
-
-
 
 /**------------------FIN PAGE PRODUCTS--------------*/
 
-
 /** ------------------PAGE CART------------------------*/
-.body3{
-  font-family: 'PT Sans Narrow', sans-serif;
+.body3 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 #main_cart {
-    width: 100%;
-    height: fit-content;
-    background-image: url(/Front-end/img/boisblanc.jpg);
-    border: black solid thin;
+  width: 100%;
+  height: fit-content;
+  background-image: url(/Front-end/img/boisblanc.jpg);
+  border: black solid thin;
 }
 
-.Formulaire{
-    background-color: rgba(0, 0, 0, 0.163);
-    width: 100%;
-    height: fit-content;
+.Formulaire {
+  background-color: rgba(0, 0, 0, 0.163);
+  width: 100%;
+  height: fit-content;
 }
-.Cart{
-    background-color: rgba(0, 0, 0, 0.68);
-    border: black thin solid;
-    height: auto;
-        &__subtitle{
-            text-align: center;
-            color: white;
-            padding-top: 5%;
-            font-size: 2rem;
-            
-            
-        }
-}
-#LegendLine{
-    border-bottom: solid rgba(21, 6, 35, 0.347) ;
-    font-size: 1.2rem;
-}
-
-#LegendLine th{
-  color: rgb(87, 26, 144)
-}
-#totelLine{
-    border-top:solid rgba(21, 6, 35, 0.347) ;
-    font-weight: bold;
-    font-size: large;
-}
-th,td{
-    color: rgb(3, 3, 3);
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-#Table_on, #Table{
-    width: 100%;
-}
-
-
-#Table{
-    background-color: #f3e9f1;
-}
-tr{
-    width: 95%;
-    display: flex;
-    justify-content: space-evenly;
-margin: 0 2.5% 0 2.5%;
-    
-}
-.ProdName{
-    width: 25%;
-    height: auto;
+.Cart {
+  background-color: rgba(0, 0, 0, 0.68);
+  border: black thin solid;
+  height: auto;
+  &__subtitle {
     text-align: center;
-    font-weight: normal;
-    
+    color: white;
+    padding-top: 20%;
+    font-size: 2rem;
+  }
 }
-#ProdName{
-  font-weight:bold;
+#LegendLine {
+  border-bottom: solid rgba(21, 6, 35, 0.347);
+  font-size: 1.2rem;
 }
 
-.ProdLens{
-    width: 25%;
-    height: auto;
-    text-align: center;
-    font-weight: normal;
-    
+#LegendLine th {
+  color: rgb(87, 26, 144);
 }
-#ProdLens{
+#totelLine {
+  border-top: solid rgba(21, 6, 35, 0.347);
+  font-weight: bold;
+  font-size: large;
+}
+th,
+td {
+  color: rgb(3, 3, 3);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Table_on,
+#Table {
+  width: 100%;
+}
+
+#Table {
+  background-color: #f3e9f1;
+}
+tr {
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 2.5% 0 2.5%;
+}
+.ProdName {
+  width: 25%;
+  height: auto;
+  text-align: center;
+  font-weight: normal;
+}
+#ProdName {
   font-weight: bold;
 }
 
-.ProdQty{
-    width: 10%;
-    height: auto;
-    text-align: center;
-    
+.ProdLens {
+  width: 25%;
+  height: auto;
+  text-align: center;
+  font-weight: normal;
+}
+#ProdLens {
+  font-weight: bold;
 }
 
-.ProdPrice{
-    width: 20%;
-    text-align: center;
-}
-.Prodeuro{
-    width: 10%;
-    height: auto;
-    display: flex;
-    justify-content: flex-start;
-
-}
-.btn-Suppr{
-   &:hover{
-     color: blueviolet;
-     cursor: pointer;
-   }
+.ProdQty {
+  width: 10%;
+  height: auto;
+  text-align: center;
 }
 
-#Confirm{
+.ProdPrice {
+  width: 20%;
+  text-align: center;
+}
+.Prodeuro {
+  width: 10%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+.btn-Suppr {
+  &:hover {
+    color: blueviolet;
+    cursor: pointer;
+  }
+}
+
+#Confirm {
   text-align: center;
   width: 90%;
   margin: 0 5% 0 5%;
   margin-top: 2rem;
 }
-#form2{
+#form2 {
   width: 90%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   margin: 0 5% 0 5%;
-  
-
-
 }
-#Champs{
+#Champs {
   width: 100%;
   color: rgb(87, 26, 144);
   text-align: center;
-  font-style:oblique;
+  font-style: oblique;
   font-weight: bolder;
 }
-#asterisque{
+.asterisque {
   color: rgb(87, 26, 144);
   font-weight: bolder;
-
 }
-.inputcart{
-  border:black solid thin;
+.inputcart {
+  border: black solid thin;
   width: 100%;
   height: 1.6rem;
   border-radius: 0.2rem;
-  
-
 }
-.labelcart{
+.labelcart {
   font-weight: bolder;
 }
 
-#Btn-go{
-    height: 2.5rem;
-    width: 35%;
-    color: white;
-    background-color: rgba(87, 26, 144, 0.932);
-    border-radius: 0.4rem;
-    border: none;
-    box-shadow: 5px 5px 16px 3px rgba(0,0,0,0.78) ;
-    font-weight: bold;
-    animation:rebound 5s infinite linear;
-    position:relative;
-   
-    
-      &:hover{
-      cursor: pointer;
-      box-shadow:  5px 5px 25px 7px rgba(0,0,0,0.89);
+#Btn-go {
+  height: 2.5rem;
+  width: 35%;
+  color: white;
+  background-color: rgba(87, 26, 144, 0.932);
+  border-radius: 0.4rem;
+  border: none;
+  box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.78);
+  font-weight: bold;
+  animation: rebound 5s infinite linear;
+  position: relative;
 
-    }
-
+    &:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+  }
 }
-.btn-cancel{
+.btn-cancel {
   height: 2.5rem;
   width: 35%;
   border-radius: 0.4rem;
   border: none;
-  box-shadow: 5px 5px 16px 3px rgba(0,0,0,0.78);
-    &:hover{
-      cursor: pointer;
-      box-shadow: 5px 5px 25px 7px rgba(0,0,0,0.89);
-    }
+  box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.78);
+  &:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+  }
 }
-#buttonCart{
+#buttonCart {
   display: flex;
   justify-content: space-around;
   width: 90%;
   margin: 1rem 5% 3rem 5%;
- 
 }
 
-.EmptyCart{
+.EmptyCart {
   color: white;
   text-align: center;
   font-size: 3rem;
 }
 
-
 /**----------------FIN PAGE CART ----------------------*/
-
 
 /**----------PAGE CONFIRMATION----------------------*/
 
-.body4{
+.body4 {
   width: 100%;
+  margin: 0;
+  padding: 0;
   height: fit-content;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
 }
-.mainC{
+.mainC {
   width: 100%;
   height: 35rem;
-  
+
   background-size: cover;
   border: black solid thin;
   display: flex;
   align-items: center;
-  
 }
-#message{
+#message {
   background-color: rgba(0, 0, 0, 0.605);
   width: 100%;
   height: 25rem;
   position: relative;
-  
 }
 
-.confMessage{
+.confMessage {
   color: white;
   text-align: center;
   width: 90%;
   margin: 10% 5% 0 5%;
 }
-#totalPrice{
+#totalPrice {
   color: white;
   text-align: center;
   width: 90%;
   margin: 1rem 5% 0 5%;
 }
 
-#orderNumber{
+#orderNumber {
   color: white;
   text-align: center;
   width: 90%;
   margin: 1rem 5% 0 5%;
 }
 
-#btnbox{
+#btnbox {
   display: flex;
   justify-content: center;
 }
-#finalbtn{
+#finalbtn {
   width: 8rem;
   height: 2.5rem;
   border-radius: 0.5rem;
   outline: none;
   border: none;
   background-color: #f3e9f1;
-  box-shadow: 5px 5px 16px 3px rgba(0,0,0,0.78);
-    &:hover{
-      box-shadow: 5px 5px 25px 7px rgba(0,0,0,0.89);
-    }
-  
+  box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.78);
+  &:hover {
+    box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+    cursor: pointer;
+  }
 }
 
 #finalbtn a {
@@ -590,222 +573,234 @@ margin: 0 2.5% 0 2.5%;
 }
 
 /**----------------ANIMATIONS------------*/
-  
-    @keyframes card-anim {
-    0% {
-        opacity: 0.9;
-        transform: scale(1)
-      }
-    
-      100% {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-    
+
+@keyframes card-anim {
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
-
-
 @keyframes rebound {
-  0%{
-    top:0em}
-  40%{top:0em}
-  43%{top:-0.9em}
-  46%{top:0em}
-  48%{top:-0.4em}
-  50%{top:0em}
-  100%{top:0em;}
+  0% {
+    top: 0em;
   }
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.9em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.4em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
+}
 /**----------------Fin ANIMATIONS------------*/
-
 
 /**--------------------TABLET---------------------*/
 
 @media (min-width: 500px) and (max-width: 800px) {
+  .nav__logo--img {
+    width: 60%;
+  }
 
-.nav__logo--img{
-  width: 60%;
-}
+  .main__welcome--btn {
+    width: 25%;
+  }
+  .main__welcome {
+    background-image: url(/Front-end/img/Camera-vintage_tablet-black.jpg);
+    background-size: cover;
+    height: 22rem;
+  }
+  .mainIndex {
+    height: 67rem;
+  }
 
+  #card {
+    width: 30%;
+    height: fit-content;
+    margin-left: 1rem;
+  }
+  #Prodlist {
+    width: 100%;
+    height: 45rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Cart__subtitle {
+    padding-top: 10%;
+  }
+  .camera {
+    width: 100%;
+    height: 17rem;
+  }
 
-.main__welcome--btn{
-  width: 25%;
-}
-.main__welcome{
-  background-image: url(/Front-end/img/Camera-vintage_tablet-black.jpg);
-  background-size: cover;
-  height: 22rem;
-}
-.mainIndex{
-  height: 67rem;
-}
+  .mainProducts {
+    height: 64rem;
+  }
 
-#card{
-  width: 30%;
-  height: fit-content;
-  margin-left: 1rem;
-    
- 
-
-
-}
-#Prodlist{
-  width: 100%;
-  height: 45rem;
-  display: flex;
-  flex-wrap: wrap;
-
-  
-}
-.camera{
-  width: 100%;
-  height: 17rem
-  
-}
-.mainProducts{
-  height: 64rem;
-}
-.pict{
-  height: 25rem;
-  object-fit: cover;
-}
-.camera2{
-  height: 55rem;
-}
-.main3{
-  background-image: url(/Front-end/img/Camera-vintage_tablet-black.jpg);
-  background-size: cover;
-}
+  .main__welcome--title {
+    position: relative;
+    top: 1rem;
+  }
+  .pict {
+    height: 25rem;
+    object-fit: cover;
+  }
+  .camera2 {
+    height: 55rem;
+  }
+  .main3 {
+    background-image: url(/Front-end/img/Camera-vintage_tablet-black.jpg);
+    background-size: cover;
+  }
 }
 
 /**--------------------FIN TABLET---------------------*/
 
 /**------------------DESKTOP-----------------------*/
-@media (min-width: 801px) and (max-width: 3000px) { 
-  .main{
+@media (min-width: 801px) and (max-width: 3000px) {
+  .main {
     height: 78rem;
   }
-  .footcont{
+  .footcont {
     width: 50%;
   }
 
-  .main__welcome{
+  .main__welcome {
     height: 30rem;
     background-image: url(/Front-end/img/camera-vintage-Desktop-black.jpg);
-   
+    background-size: cover;
   }
-#Prodlist{
-  width: 80%;
-  margin: 0 10% 0 17%;
-  height: 30rem;
-  display: flex;
-  flex-wrap: wrap;
-  
-}
+  #Prodlist {
+    width: 80%;
+    margin: 0 10% 0 17%;
+    height: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.nav__logo--img{
-  width: 30%;
-}
-.main__welcome--btn{
-  width: 15%
-}
-#card{
-  width: 30%;
-  
-}
-.footer{
-  justify-content:space-around
-}
-.fab, .fas{
-  font-size: 3rem;
-}
-.main__welcome--title{
-  font-size: 4rem;
-}
-.main__welcome--subtitle{
-  font-size: 2rem;
-}
-.pict{
-  height: 20rem;
-  width: 30rem;
-  margin-top: 4rem;
-  
-}
-.camera2{
-  display: flex;
-  flex-wrap: wrap;
-  height: 52rem;
-  width: 60%;
-  margin: 2% 20% 0 20%;
-  justify-content: center;
-}
-.descr{
- 
-  position: relative;
-  bottom: 5rem;
-}
-#form{
-  position: relative;
-  bottom: 5rem;
-  width: 100%;
-}
+  .nav__logo--img {
+    width: 30%;
+  }
+  .main__welcome--btn {
+    width: 15%;
+  }
+  #card {
+    width: 30%;
+  }
+  .footer {
+    justify-content: space-around;
+  }
+  .fab,
+  .fas {
+    font-size: 3rem;
+  }
+  .main__welcome--title {
+    font-size: 4rem;
+    padding-top: 1rem;
+  }
+  .main__welcome--subtitle {
+    font-size: 2rem;
+  }
+  .pict {
+    height: 20rem;
+    width: 30rem;
+    margin-top: 4rem;
+  }
+  .camera2 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 52rem;
+    width: 60%;
+    margin: 2% 20% 0 20%;
+    justify-content: center;
+  }
+  .descr {
+    position: relative;
+    bottom: 5rem;
+  }
+  #form {
+    position: relative;
+    bottom: 5rem;
+    width: 100%;
+  }
 
-#btnBackToIndex, #btnAddToCart{
-  width: 20%;
-  
-  &:hover{
-    cursor: pointer;
-    box-shadow: 1px 1px 16px 1px rgba(0,0,0,0.78);
-    
+  #btnBackToIndex,
+  #btnAddToCart {
+    width: 20%;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 1px 16px 1px rgba(0, 0, 0, 0.78);
+    }
+  }
+  .mainProducts {
+    height: 58rem;
+  }
+
+  /** ----------------CART Desktop--------------------------*/
+
+  .Cart__subtitle {
+    position: relative;
+    bottom: 1.6rem;
+  }
+  .CartDesk {
+    width: 50%;
+    margin: 0 25% 0 25%;
+  }
+  .FormDesk {
+    width: 50%;
+    margin: 0 25% 0 25%;
+    height: 42rem;
+  }
+  #Btn-go,
+  #btn-cancel {
+    width: 30%;
+  }
+
+  #Btn-go {
+    &:hover {
+      cursor: pointer;
+      box-shadow: 5px 5px 25px 7px rgba(0, 0, 0, 0.89);
+    }
+  }
+  #buttonCart {
+    position: relative;
+    top: 2rem;
   }
 }
-.mainProducts{
-  height: 58rem ;
-}
 
+/**-------------------CONFIRMATION Desktop-------------*/
 
-/** ----------------CART Desktop--------------------------*/
-
-.Cart__subtitle{
-  position: relative;
-  bottom: 1.6rem;
-}
-.CartDesk{
-  width: 50%;
-  margin: 0 25% 0 25%;
-}
-.FormDesk{
-  width: 50%;
-  margin: 0 25% 0 25%;
-  height: 42rem;
-}
-#Btn-go, #btn-cancel {
-  width: 20%;
-
-}
-
-
-#Btn-go{
-  &:hover{
-    cursor: pointer;
-    box-shadow:  5px 5px 25px 7px rgba(0,0,0,0.89);
-    
-  }
-}
-#buttonCart{
-  position: relative;
-  top: 2rem;
-}
-}
-
-/**-------------------CONFIRMATION Desktop-------------*/ 
-
-.mainConf{
+.mainConf {
   background-image: url(/Front-end/img/camera-vintage-Desktop.jpg);
   height: 40rem;
-
 }
-.messageConf{
+.messageConf {
   width: 80%;
-  
+}
+
+@media (min-width: 420px) and (max-width: 600px) {
+  .camera {
+    height: 21rem;
+  }
+
+  .camera3 {
+    height: 45rem;
+  }
 }
